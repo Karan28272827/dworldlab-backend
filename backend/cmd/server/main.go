@@ -30,6 +30,6 @@ func main() {
 	// Swagger
 	app.Get("/swagger/*", fiberSwagger.WrapHandler)
 
-	log.Println("Server running at http://localhost:3000")
-	log.Fatal(app.Listen(":3000"))
+	log.Println("Server running at http://localhost:8002")
+	log.Fatal(app.Listen(":8002"))
 }
