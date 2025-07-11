@@ -1,0 +1,28 @@
+# Tools Status
+
+## Working (Implemented)
+- agecalc
+- bmi
+- emicalculator
+- sipcalculator
+- unitconverter
+- passwordgenerator
+- wordcounter
+- base64coder
+- colorpicker
+- qrcodegenerator
+- jsonformatter
+
+## Yet to be Implemented (Stub/Placeholder)
+- audioconverter
+- audiotrimmer
+- blogsection
+- bmicalculator
+- imagecompressor
+- imageconverter
+- imagecropper
+- texttospeech
+- speechtotext
+- timerstopwatch
+- videoconverter
+- caloriecalc 

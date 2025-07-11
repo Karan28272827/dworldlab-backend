@@ -1,0 +1,205 @@
+basePath: /api
+host: localhost:3000
+info:
+  contact: {}
+  description: API documentation for your tool-based Go backend.
+  title: Fiber Tools API
+  version: "1.0"
+paths:
+  /tools/age:
+    get:
+      consumes:
+      - application/json
+      description: Takes birth year and returns current age
+      parameters:
+      - description: Birth year
+        in: query
+        name: year
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: integer
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Calculate age from birth year
+      tags:
+      - Tools
+  /tools/emicalculator:
+    get:
+      consumes:
+      - application/json
+      description: Takes principal, rate, and tenure to calculate monthly EMI
+      parameters:
+      - description: Principal amount
+        in: query
+        name: principal
+        required: true
+        type: number
+      - description: Annual interest rate in percent
+        in: query
+        name: rate
+        required: true
+        type: number
+      - description: Loan tenure in months
+        in: query
+        name: tenure
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: number
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Calculate EMI (Equated Monthly Installment)
+      tags:
+      - Tools
+  /tools/passwordgenerator:
+    get:
+      consumes:
+      - application/json
+      description: Generate a random password of specified length
+      parameters:
+      - description: 'Password length (default: 12)'
+        in: query
+        name: length
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Generate random password
+      tags:
+      - Tools
+  /tools/sipcalculator:
+    get:
+      consumes:
+      - application/json
+      description: Takes monthly amount, rate, and months to calculate accumulated
+        corpus
+      parameters:
+      - description: Monthly investment amount
+        in: query
+        name: amount
+        required: true
+        type: number
+      - description: Annual interest rate in percent
+        in: query
+        name: rate
+        required: true
+        type: number
+      - description: Investment period in months
+        in: query
+        name: months
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: number
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Calculate SIP (Systematic Investment Plan) corpus
+      tags:
+      - Tools
+  /tools/unitconverter:
+    get:
+      consumes:
+      - application/json
+      description: Convert values between length, weight, and temperature units
+      parameters:
+      - description: Value to convert
+        in: query
+        name: value
+        required: true
+        type: number
+      - description: Source unit (km, m, kg, g, c, f)
+        in: query
+        name: from
+        required: true
+        type: string
+      - description: Target unit (km, m, kg, g, c, f)
+        in: query
+        name: to
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Convert between different units
+      tags:
+      - Tools
+  /tools/wordcounter:
+    get:
+      consumes:
+      - application/json
+      description: Count the number of words in the provided text
+      parameters:
+      - description: Text to count words in
+        in: query
+        name: text
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: integer
+            type: object
+      summary: Count words in text
+      tags:
+      - Tools
+swagger: "2.0"
